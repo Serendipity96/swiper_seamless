@@ -1,15 +1,13 @@
 let n
 init()
 setInterval(() => {
-    activeButton(getButton(n)
-)
-makeLeave(getImage(n))
+    activeButton(getButton(n))
+    makeLeave(getImage(n))
     .one('transitionend', (e) => {
-    makeEnter($(e.currentTarget)
-)
-})
-makeCurrent(getImage(n + 1))
-n++;
+    makeEnter($(e.currentTarget))
+    })
+    makeCurrent(getImage(n + 1))
+    n++;
 },3000)
 
 function getImage(n) {
