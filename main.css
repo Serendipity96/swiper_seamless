@@ -1,32 +1,35 @@
-.window{
+.window {
     width: 370px;
-    height:240px;
+    height: 240px;
     overflow: hidden;
 }
-.images{
-    position:relative;
+
+.images {
+    position: relative;
 }
 
 .images > img {
-    position:absolute;
-    top:0;
-    width:100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
     transition: all .5s;
 }
 
-.images > img.current{
-    left:0;
-    transform:translateX(0);
-    z-index:1;
-}
-.images > img.leave{
-    transform:translateX(-100%);
-    z-index:1;
-}
-.images > img.enter{
-    transform:translateX(100%);
+.images > img.current {
+    left: 0;
+    transform: translateX(0);
+    z-index: 1;
 }
 
-.red{
-    color:red;
+.images > img.leave {
+    transform: translateX(-100%);
+    z-index: 1;
+}
+
+.images > img.enter {
+    transform: translateX(100%);
+}
+
+.red {
+    color: red;
 }
