@@ -2,26 +2,31 @@ let $buttons = $('#buttons>li')
 let $slides = $('#slides')
 let $images = $slides.children('img')
 let current = 0
-let timer = null;
+
 makeFakeSlides()
 init()
 bindEvents()
+
 $('#previous').on('click', function () {
     goToSlide(current - 1)
 })
+
 $('#next').on('click', function () {
     goToSlide(current + 1)
 })
-timer = setInterval(function () {
+
+let timer = setInterval(function () {
     goToSlide(current + 1)
 }, 2000)
+
 $('.window').on('mouseenter',(function () {
     clearInterval(timer)
 })).on('mouseleave',(function () {
     timer = setInterval(function () {
         goToSlide(current + 1)
-    }, 2000);
+    },2000);
 }))
+
 function bindEvents() {
     $('#buttons').on('click', 'li', function (ev) {
         let $button = $(ev.currentTarget)
@@ -47,7 +52,6 @@ function goToSlide(index) {
     }
     $buttons.eq(index).addClass('select').siblings().removeClass('select')
     current = index
-
 }
 
 function makeFakeSlides() {
